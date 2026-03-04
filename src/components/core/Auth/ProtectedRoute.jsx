@@ -1,24 +1,17 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
-import Loading from '../../common/Loading'
+import React from "react"
+import { useSelector } from "react-redux"
+import { Navigate } from "react-router-dom"
 
 const ProtectedRoute = ({ children }) => {
+  const { token } = useSelector((state) => state.auth)
 
-    const { token } = useSelector((state) => state.auth)
+  const authToken = token || localStorage.getItem("token")
 
-    // 🔥 If token is undefined (redux not ready yet), show loader
-    if (token === undefined) {
-        return <Loading />
-    }
-
-    // ✅ If token exists, allow access
-    if (token) {
-        return children
-    }
-
-    // ❌ If no token, redirect
+  if (!authToken) {
     return <Navigate to="/login" replace />
+  }
+
+  return children
 }
 
 export default ProtectedRoute
