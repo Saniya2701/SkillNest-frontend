@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import CountryCode from "../../../../data/countrycode.json";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const ContactUsForm = () => {
   const [loading, setLoading] = useState(false);
 
@@ -18,16 +20,13 @@ const ContactUsForm = () => {
 
       console.log("Sending Data:", data);
 
-      const response = await fetch(
-        "http://localhost:5000/api/v1/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${BASE_URL}/reach/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       const result = await response.json();
 
@@ -62,7 +61,6 @@ const ContactUsForm = () => {
       className="flex flex-col gap-7"
       onSubmit={handleSubmit(submitContactForm)}
     >
-      {/* First & Last Name */}
       <div className="flex flex-col gap-5 lg:flex-row">
         <div className="flex flex-col gap-2 lg:w-[48%]">
           <label htmlFor="firstname" className="lable-style">
@@ -96,7 +94,6 @@ const ContactUsForm = () => {
         </div>
       </div>
 
-      {/* Email */}
       <div className="flex flex-col gap-2">
         <label htmlFor="email" className="lable-style">
           Email Address
@@ -115,7 +112,6 @@ const ContactUsForm = () => {
         )}
       </div>
 
-      {/* Phone */}
       <div className="flex flex-col gap-2">
         <label className="lable-style">Phone Number</label>
 
@@ -156,7 +152,6 @@ const ContactUsForm = () => {
         )}
       </div>
 
-      {/* Message */}
       <div className="flex flex-col gap-2">
         <label htmlFor="message" className="lable-style">
           Message
@@ -175,7 +170,6 @@ const ContactUsForm = () => {
         )}
       </div>
 
-      {/* Submit Button */}
       <button
         type="submit"
         disabled={loading}
