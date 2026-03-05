@@ -20,7 +20,7 @@ const ContactUsForm = () => {
 
       console.log("Sending Data:", data);
 
-      const response = await fetch(`${BASE_URL}/reach/contact`, {
+      const response = await fetch(`${BASE_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
