@@ -71,7 +71,7 @@ const Home = () => {
       navigate("/dashboard/my-profile")
     } 
     else if (user?.accountType === "Instructor") {
-      navigate("/dashboard/add course")
+      navigate("/dashboard/addcourse")
     }
 
   }
