@@ -5,10 +5,8 @@ import CTAButton from "../HomePage/Button"
 import { FaArrowRight } from 'react-icons/fa'
 import Img from './../../common/Img';
 
-
 import { motion } from 'framer-motion'
 import { scaleUp } from './../../common/motionFrameVarients';
-
 
 const InstructorSection = () => {
   return (
@@ -39,7 +37,7 @@ const InstructorSection = () => {
           </p>
 
           <div className='w-fit'>
-            <CTAButton active={true} linkto={"/signup"}>
+            <CTAButton active={true} linkto={"/catalog"}>
               <div className='flex flex-row gap-2 items-center'>
                 Start Learning Today
                 <FaArrowRight />

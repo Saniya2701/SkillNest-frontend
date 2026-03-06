@@ -87,7 +87,7 @@ const Home = () => {
       {/* ================= HERO SECTION ================= */}
       <div className='relative h-[450px] md:h-[550px] justify-center mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
 
-        <Link to={"/signup"}>
+        <Link to={"/signup?type=instructor"}>
           <div className='group p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200 hover:scale-95 w-fit'>
             <div className='flex items-center gap-2 rounded-full px-10 py-[5px] group-hover:bg-richblack-900'>
               <p>Become an Instructor</p>
@@ -116,13 +116,15 @@ const Home = () => {
         </motion.div>
 
         <div className='flex gap-7 mt-8'>
-          <CTAButton active={true} linkto={"/signup"}>
+
+          <CTAButton active={true} linkto={"/about"}>
             Learn More
           </CTAButton>
 
-          <CTAButton active={false} linkto={"/login"}>
+          <CTAButton active={false} linkto={"/contact"}>
             Book a Demo
           </CTAButton>
+
         </div>
       </div>
 
@@ -144,9 +146,6 @@ const Home = () => {
         </div>
 
       </div>
-
-      {/* ================= EXPLORE MORE SECTION ================= */}
-      
 
       {/* ================= SECTION 2 ================= */}
       <div className='bg-pure-greys-5 text-richblack-700 py-20'>
