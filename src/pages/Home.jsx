@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom"
-import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux';
 
 import HighlightText from '../components/core/HomePage/HighlightText'
 import CTAButton from "../components/core/HomePage/Button"
-import CodeBlocks from "../components/core/HomePage/CodeBlocks"
 import TimelineSection from '../components/core/HomePage/TimelineSection'
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
 import InstructorSection from '../components/core/HomePage/InstructorSection'
 import Footer from '../components/common/Footer'
-import ExploreMore from '../components/core/HomePage/ExploreMore'
 import ReviewSlider from '../components/common/ReviewSlider'
 import Course_Slider from '../components/core/Catalog/Course_Slider'
 
@@ -54,7 +52,29 @@ const Home = () => {
   const [CatalogPageData, setCatalogPageData] = useState(null);
 
   const categoryID = "6999ef8e9ba0a1f444431a4c"; 
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // get user from redux
+  const { user } = useSelector((state) => state.profile);
+
+  // redirect logic
+  const handleStartLearning = () => {
+
+    if (!user) {
+      navigate("/signup")
+      return
+    }
+
+    if (user?.accountType === "Student") {
+      navigate("/dashboard/my-profile")
+    } 
+    else if (user?.accountType === "Instructor") {
+      navigate("/dashboard/add-course")
+    }
+
+  }
 
   useEffect(() => {
     const bg = randomImages[Math.floor(Math.random() * randomImages.length)]
@@ -84,7 +104,7 @@ const Home = () => {
         <div className="absolute left-0 bottom-0 w-full h-[250px] opacity_layer_bg"></div>
       </div>
 
-      {/* ================= HERO SECTION ================= */}
+      {/* HERO SECTION */}
       <div className='relative h-[450px] md:h-[550px] justify-center mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
 
         <Link to={"/signup?type=instructor"}>
@@ -115,11 +135,14 @@ const Home = () => {
           Learn at your own pace from anywhere in the world with real projects and expert guidance.
         </motion.div>
 
+        {/* BUTTONS */}
         <div className='flex gap-7 mt-8'>
 
-          <CTAButton active={true} linkto={"/about"}>
-            Learn More
-          </CTAButton>
+          <button onClick={handleStartLearning}>
+            <CTAButton active={true}>
+              Start Learning
+            </CTAButton>
+          </button>
 
           <CTAButton active={false} linkto={"/contact"}>
             Book a Demo
@@ -128,7 +151,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* ================= COURSE SLIDERS ================= */}
+      {/* COURSE SLIDERS */}
       <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
 
         <div className='w-full py-12'>
@@ -147,7 +170,7 @@ const Home = () => {
 
       </div>
 
-      {/* ================= SECTION 2 ================= */}
+      {/* SECTION 2 */}
       <div className='bg-pure-greys-5 text-richblack-700 py-20'>
         <div className='w-11/12 max-w-maxContent mx-auto'>
           <TimelineSection />
@@ -155,7 +178,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* ================= SECTION 3 ================= */}
+      {/* SECTION 3 */}
       <div className='mt-14 w-11/12 mx-auto max-w-maxContent bg-richblack-900 text-white py-20'>
         <InstructorSection />
 
