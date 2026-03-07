@@ -139,7 +139,7 @@ const Home = () => {
         <div className='flex gap-7 mt-8'>
 
           <button onClick={handleStartLearning}>
-            <CTAButton active={true} linkto={"/catalog/programming"}>
+             <CTAButton active={true} linkto={"/catalog/programming"}>
               Start Learning
             </CTAButton>
           </button>
