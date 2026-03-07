@@ -139,7 +139,7 @@ const Home = () => {
         <div className='flex gap-7 mt-8'>
 
           
-             <CTAButton active={true} linkto={"/catalog/programming"}>
+             <CTAButton active={true} linkto={"/catalog/web-development"}>
               Start Learning
             </CTAButton>
           
