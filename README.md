@@ -1,22 +1,20 @@
-SkillNest Frontend
+🚀 SkillNest Frontend
 
-SkillNest is a modern EdTech learning platform that enables instructors to create and publish courses while allowing students to explore, purchase, and learn from those courses through an intuitive dashboard interface.
+SkillNest is a modern EdTech learning platform that allows instructors to create and publish courses while enabling students to explore, enroll, and learn through an interactive dashboard.
 
-This repository contains the frontend application of SkillNest built using modern web technologies to deliver a fast, responsive, and interactive learning experience.
+This repository contains the frontend application of SkillNest built with modern web technologies to deliver a fast, responsive, and scalable learning experience.
 
-The frontend communicates with the SkillNest backend APIs to manage authentication, course browsing, course creation, student enrollments, and user dashboards.
+The frontend communicates with the backend APIs to handle authentication, course browsing, course creation, dashboards, and user interactions.
 
-Live Demo
+🌐 Live Demo
 
-Frontend Deployment:
+🔗 Frontend Deployment
 
 https://skill-nest-frontend-eight.vercel.app
 
-Deployed using
+🚀 Deployed using Vercel
 
-Vercel
-
-Table of Contents
+📌 Table of Contents
 
 Project Overview
 
@@ -24,9 +22,9 @@ Features
 
 User Roles
 
-Application Architecture
-
 Tech Stack
+
+Application Architecture
 
 Folder Structure
 
@@ -36,9 +34,9 @@ Routing System
 
 Course Creation Workflow
 
-API Communication
+API Integration
 
-Installation & Setup
+Installation Guide
 
 Environment Variables
 
@@ -48,13 +46,17 @@ Future Improvements
 
 Author
 
-Project Overview
+📖 Project Overview
 
-SkillNest is designed to simulate the functionality of modern online learning platforms where instructors can publish educational content and students can enroll and learn at their own pace.
+SkillNest is designed to replicate the functionality of modern online learning platforms where:
+
+Instructors can create and manage courses
+
+Students can browse, purchase, and learn from courses
 
 The frontend focuses on:
 
-Providing an engaging user interface
+Creating an intuitive user interface
 
 Managing application state efficiently
 
@@ -62,51 +64,40 @@ Communicating with backend APIs
 
 Handling user authentication and authorization
 
-Rendering course data dynamically
+Rendering dynamic course data
 
-The platform supports two primary user roles:
+✨ Features
+🔐 Authentication System
 
-Students – who enroll and learn from courses
+The platform provides a secure authentication system.
 
-Instructors – who create and manage courses
+Users can:
 
-Features
+Register with email verification
 
-SkillNest includes a wide range of features that enhance both teaching and learning experiences.
+Login securely
 
-Authentication System
+Reset forgotten passwords
 
-The platform provides secure user authentication.
+Logout safely
 
-Features include:
+Authentication is handled using JWT tokens.
 
-User registration
+📚 Course Catalog
 
-Login with email and password
-
-Email verification using OTP
-
-Forgot password functionality
-
-Secure logout
-
-Authentication tokens are managed securely within the application state.
-
-Course Catalog
-
-Students can explore courses available on the platform.
+Students can explore all available courses.
 
 Features include:
 
 Category-based course listing
 
-Course cards displaying course information
+Course cards with instructor and pricing
 
-Search and navigation through course categories
+Detailed course pages
 
-Course detail pages showing full course descriptions
+Easy navigation across categories
 
-Student Dashboard
+🎓 Student Dashboard
 
 The student dashboard provides a personalized learning environment.
 
@@ -116,74 +107,72 @@ View enrolled courses
 
 Access lecture videos
 
-Track learning progress
+Track course progress
 
-Manage profile details
+Manage profile information
 
-Instructor Dashboard
+👨‍🏫 Instructor Dashboard
 
-The instructor dashboard enables instructors to manage and monitor their courses.
+The instructor dashboard allows instructors to manage their teaching content.
 
 Features include:
 
 Create new courses
 
-Edit course content
+Add sections and lectures
 
-Add sections and subsections
-
-Upload lecture videos
+Upload video content
 
 Publish or unpublish courses
 
-View student enrollment statistics
+Monitor student enrollments
 
-Monitor overall course performance
+View analytics and statistics
 
-Course Builder
+🛠 Course Builder
 
-The Course Builder allows instructors to structure their courses in a hierarchical format.
+The Course Builder allows instructors to structure courses in a hierarchical format.
 
 Course Structure:
 
 Course
 → Sections
 → Subsections
-→ Video lectures
+→ Video Lectures
 
-This structured approach makes content easier for students to follow.
+This structure helps maintain organized learning content.
 
-Instructor Analytics
+📊 Instructor Analytics
 
-The dashboard provides analytical insights such as:
+Instructors can track course performance using visual analytics.
 
-Total number of courses created
+Dashboard insights include:
+
+Total courses created
 
 Total student enrollments
 
 Course-wise student distribution
 
-Performance visualization using charts
+Graphical charts for analytics
 
-Analytics help instructors understand how their courses are performing.
+📱 Responsive Design
 
-Responsive Design
-
-SkillNest is fully responsive and works across multiple devices including:
+SkillNest is fully responsive and works across:
 
 Desktop
 
 Tablets
 
-Mobile phones
+Mobile devices
 
-The responsive design ensures a seamless learning experience across all screen sizes.
+This ensures a consistent user experience across all devices.
 
-Application Architecture
+🏗 Application Architecture
 
-The SkillNest frontend follows a component-based architecture.
+SkillNest frontend follows a component-based architecture.
 
-Key architectural principles include:
+Key principles include:
 
 Reusable UI components
 
@@ -193,40 +182,31 @@ Modular folder structure
 
 Clear separation of concerns
 
-The frontend communicates with backend services through REST APIs.
-
 Application Flow:
 
-User → Frontend Interface → API Requests → Backend Services → Database
+User → React Frontend → API Requests → Backend Server → Database
+⚙️ Tech Stack
+Frontend Technologies
 
-Tech Stack
+⚛ React
 
-SkillNest frontend is built using modern web development technologies.
+🧠 Redux
 
-Core Technologies
+🔀 React Router
 
-React – Component-based user interface library
-
-Redux – Global state management
-
-React Router – Client-side routing
-
-Tailwind CSS – Utility-first CSS framework
+🎨 Tailwind CSS
 
 Additional Libraries
 
-React Hook Form – Efficient form handling and validation
+React Hook Form (form validation)
 
-React Hot Toast – Notification alerts
+React Hot Toast (notifications)
 
-Chart.js – Data visualization for dashboards
+Chart.js (data visualization)
 
-Axios – API communication
+Axios (API communication)
 
-Folder Structure
-
-The project follows a modular folder structure for scalability and maintainability.
-
+📁 Folder Structure
 src
 │
 ├── components
@@ -254,68 +234,68 @@ src
 ├── App.js
 └── index.js
 
-This structure ensures the codebase remains organized and easy to scale.
+This structure ensures the project remains scalable and maintainable.
 
-State Management
+🧠 State Management
 
-SkillNest uses Redux for managing global application state.
-
-Redux helps maintain predictable state updates across the application.
-
-Key Redux slices include:
+SkillNest uses Redux to manage global application state.
 
 authSlice
 
-Handles authentication state including:
+Handles authentication including:
 
-Logged-in user information
+user login
 
-Authentication tokens
+logout
 
-Login and logout state
+authentication tokens
 
 profileSlice
 
-Manages user profile details and profile updates.
+Handles:
+
+user profile data
+
+profile updates
 
 courseSlice
 
-Handles the course creation workflow including:
+Handles:
 
-Course information
+course creation
 
-Course content
+editing
 
-Publishing settings
+publishing workflow
 
-Routing System
+🔀 Routing System
 
-Client-side routing is implemented using React Router.
+Routing is implemented using React Router.
 
-Important application routes include:
+Important routes include:
 
-/                     Home Page
-/login                User Login
-/signup               User Registration
-/catalog              Course Catalog
-/course/:courseId     Course Details
-/dashboard            User Dashboard
-/dashboard/my-courses Instructor Courses
-/dashboard/add-course Create Course
+/                → Home Page
+/login           → Login Page
+/signup          → Registration Page
+/catalog         → Course Catalog
+/course/:id      → Course Details
+/dashboard       → User Dashboard
+/dashboard/add-course
+/dashboard/my-courses
 
-Protected routes ensure that only authenticated users can access dashboard features.
+Protected routes ensure only authenticated users can access dashboard pages.
 
-Course Creation Workflow
+🎯 Course Creation Workflow
 
-Course creation is divided into multiple steps to simplify the process.
+Course creation is divided into 3 main steps.
 
-Step 1 – Course Information
+Step 1 — Course Information
 
 Instructor adds:
 
 Course title
 
-Course description
+Description
 
 Category
 
@@ -323,29 +303,29 @@ Price
 
 Thumbnail image
 
-Step 2 – Course Builder
+Step 2 — Course Builder
 
 Instructor creates:
 
-Course sections
+Sections
 
 Subsections
 
-Lecture videos
+Video lectures
 
-Step 3 – Publish Settings
+Step 3 — Publish Course
 
-Instructor decides whether to:
+Instructor can:
 
 Save course as draft
 
 Publish course for students
 
-API Communication
+🔌 API Integration
 
-The frontend interacts with backend services through REST APIs.
+The frontend communicates with backend services through REST APIs.
 
-API operations include:
+Operations include:
 
 User authentication
 
@@ -353,34 +333,65 @@ Course creation
 
 Course editing
 
-Fetching course data
+Fetching course details
 
-Uploading media files
+Uploading course content
 
-API communication is handled using Axios.
+API requests are handled using Axios.
 
-Installation & Setup
-
-Follow these steps to run the frontend locally.
-
-Clone the Repository
+💻 Installation Guide
+1️⃣ Clone Repository
 git clone https://github.com/your-username/skillnest-frontend.git
-
-Navigate into the project directory.
-
+2️⃣ Navigate into Project
 cd skillnest-frontend
-Install Dependencies
+3️⃣ Install Dependencies
 npm install
-Start Development Server
+4️⃣ Start Development Server
 npm start
 
-The application will run on:
+Application runs at:
 
 http://localhost:5000
-Environment Variables
+🔑 Environment Variables
 
-Create a .env file in the root directory and add:
+Create a .env file in the root directory.
 
-REACT_APP_BASE_URL=http://localhost:4000/api/v1
+REACT_APP_BASE_URL=http://localhost:5000/api/v1
+📸 Screenshots
 
-This connects the frontend with the backend APIs.
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/47e01e6b-ff05-4a8f-8d3f-e418fff6952d" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/058d19c7-3d94-439c-bd3f-782e8c8ce7de" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/9eeeb847-898c-426a-b19a-ebb04f03d278" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/53d465e1-b9dc-4798-97b2-1d1880fc5755" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/65c9b083-deff-4ca7-8ae0-c2f0d227146e" />
+
+
+
+
+🚀 Future Improvements
+
+Planned enhancements include:
+
+Payment integration using Razorpay
+
+Course completion certificates
+
+Student progress tracking
+
+Advanced analytics
+
+Course recommendation system
+
+👩‍💻 Author
+
+Saniya Mane
+
+SkillNest demonstrates full-stack development skills including:
+
+Frontend architecture
+
+Dashboard development
+
+API integration
+
+Scalable application design
