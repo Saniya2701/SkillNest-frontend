@@ -7,7 +7,6 @@ import Img from './../../common/Img';
 
 import { logout } from "../../../services/operations/authAPI"
 
-
 import { VscDashboard, VscSignOut } from "react-icons/vsc"
 import { AiOutlineCaretDown, AiOutlineHome } from "react-icons/ai"
 import { MdOutlineContactPhone } from "react-icons/md"
@@ -16,21 +15,9 @@ import { PiNotebook } from "react-icons/pi"
 import { fetchCourseCategories } from './../../../services/operations/courseDetailsAPI';
 
 
-// const CatalogDropDown = ({ subLinks }) => {
-//     if (!subLinks) return
-
-//     return (
-//         <div>
-
-//         </div>
-//     )
-// }
-
-
 export default function MobileProfileDropDown() {
     const { user } = useSelector((state) => state.profile)
     if (!user) return null
-    // console.log('user data from store = ', user )
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -38,39 +25,27 @@ export default function MobileProfileDropDown() {
 
     useOnClickOutside(ref, () => setOpen(false))
 
-
     const [open, setOpen] = useState(false)
-    const [subLinks, setSubLinks] = useState([]);
-    const [loading, setLoading] = useState(false);
-
+    const [subLinks, setSubLinks] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const fetchSublinks = async () => {
         try {
             setLoading(true)
-            const res = await fetchCourseCategories();
-            // const result = await apiConnector("GET", categories.CATEGORIES_API);
-            // const result = await apiConnector('GET', 'http://localhost:4000/api/v1/course/showAllCategories');
-            // console.log("Printing Sublinks result:", result);
-            setSubLinks(res);
+            const res = await fetchCourseCategories()
+            setSubLinks(res)
         }
         catch (error) {
-            console.log("Could not fetch the category list = ", error);
+            console.log("Could not fetch the category list = ", error)
         }
         setLoading(false)
     }
 
-    // console.log('data of store  = ', useSelector((state)=> state))
-
-
     useEffect(() => {
-        fetchSublinks();
+        fetchSublinks()
     }, [])
 
-
     return (
-
-        // only for small devices
-
         <button className="relative sm:hidden" onClick={() => setOpen(true)}>
             <div className="flex items-center gap-x-1">
                 <Img
@@ -80,7 +55,6 @@ export default function MobileProfileDropDown() {
                 />
                 <AiOutlineCaretDown className="text-sm text-richblack-100" />
             </div>
-
 
             {open && (
                 <div
@@ -95,7 +69,6 @@ export default function MobileProfileDropDown() {
                         </div>
                     </Link>
 
-
                     <Link to='/' onClick={() => setOpen(false)}>
                         <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 border-y border-richblack-700 ">
                             <AiOutlineHome className="text-lg" />
@@ -103,7 +76,11 @@ export default function MobileProfileDropDown() {
                         </div>
                     </Link>
 
-                    <Link to='/' onClick={() => setOpen(false)}>
+                    {/* FIXED CATALOG LINK */}
+                    <Link 
+                        to={`/catalog/${subLinks[0]?.name?.split(" ").join("-").toLowerCase()}`} 
+                        onClick={() => setOpen(false)}
+                    >
                         <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100">
                             <PiNotebook className="text-lg" />
                             Catalog
@@ -134,9 +111,6 @@ export default function MobileProfileDropDown() {
                         <VscSignOut className="text-lg" />
                         Logout
                     </div>
-
-
-                    {/* <CatalogDropDown subLinks={subLinks} /> */}
 
                 </div>
             )}
