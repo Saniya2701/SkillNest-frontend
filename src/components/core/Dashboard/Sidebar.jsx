@@ -71,7 +71,7 @@ export default function Sidebar() {
       {/* Sidebar */}
       {
         openSideMenu &&
-        <div className="fixed sm:static z-[1000] flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
+        <div className="fixed sm:static top-[3.5rem] z-[1000] flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
 
           <div className="flex flex-col mt-6">
             {sidebarLinks.map((link) => {
